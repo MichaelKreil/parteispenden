@@ -14,7 +14,7 @@ OpenLayers.Layer.ODCDN = OpenLayers.Class(OpenLayers.Layer.TMS, {
         }, options);
 //        var prefix = [options.key, options.styleId, 256].join('/') + '/';
         var url = [
-                "http://tiles.odcdn.de/" + name + "/"
+                "https://cartodb-basemaps-a.global.ssl.fastly.net/light_nolabels/"
         ];
         var newArguments = [name, url, options];
         OpenLayers.Layer.TMS.prototype.initialize.apply(this, newArguments);
@@ -34,7 +34,7 @@ OpenLayers.Layer.ODCDN = OpenLayers.Class(OpenLayers.Layer.TMS, {
             x = ((x % limit) + limit) % limit;
 
             var url = this.url;
-            var path = z + "/" + x + "/" + y + ".png";
+            var path = z + "/" + x + "/" + y + "@2x.png";
 
             if (url instanceof Array) {
                 url = this.selectUrl(path, url);
